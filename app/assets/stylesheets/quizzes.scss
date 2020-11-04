@@ -8,17 +8,15 @@ body {
 }
 
 .container {
-  width: 1000px;
-  height: 550px;
+  width: 100vw;
+  height: 100vh;
   background: lemonchiffon;
-  margin: 0 auto;
-  padding: 42px;
-
+  padding-top: 64px;
 }
 
 .main {
-  width: 800px;
-  height: 500px;
+  width: 60vw;
+  height: 60vh;
   background: rgba(213, 255, 205, 0.705);
   margin: 0 auto;
   padding: 24px;
@@ -47,4 +45,19 @@ body {
 
 .question > li:hover {
   opacity: 0.5;
+}
+
+// topページ
+.top-main {
+  background-image: image-url("quiz.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.top-title {
+  padding: 0;
+  margin: 0;
+
 }
