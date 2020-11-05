@@ -3,7 +3,7 @@ window.addEventListener('load', () => {
     {
       question : "今日の日付は？",
       answers : ["11月4日","11月5日","11月6日","11月7日"],
-      correct : "11月4日"
+      correct : "11月5日"
     },
     {
       question : "１＋１は？",
@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
       correct : "２"
     },
     {
-      question : "誕生日は？",
+      question : "はくと君の誕生日は？",
       answers : ["11月26日","11月27日","11月28日","11月29日"],
       correct : "11月29日"
     },
@@ -37,6 +37,13 @@ window.addEventListener('load', () => {
      answers[i].addEventListener('click', () => {
        if (answers[i].textContent === quiz[quizIndex].correct) {
          window.alert("正解！！")
+         quizIndex++;
+         q.textContent = quiz[quizIndex].question;
+         let i = 0
+         while ( i < answers.length ) {
+         answers[i].textContent = quiz[quizIndex].answers[i];
+         i++;}
+   
        } else {
          window.alert("残念！！")
        }
@@ -59,19 +66,6 @@ window.addEventListener('load', () => {
     })
 
 
-
-  // for (let i = 0; i < answers.length; i++){
-
-  //     answers[i].textContent = quiz[quizIndex].answers[i];
-      
-  //     answers[i].addEventListener('click', () => {
-  //       if (answers[i].textContent === quiz[quizIndex].correct) {
-  //         window.alert("正解！！")
-  //       } else {
-  //         window.alert("残念！！")
-  //       }
-  //     });
-  //   }
 
 
 
