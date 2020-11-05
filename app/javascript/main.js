@@ -38,7 +38,7 @@ window.addEventListener('load', () => {
       ans[i].textContent = quiz[quizIndex].answers[i];
       
       ans[i].addEventListener('click', () => {
-        if (ans[i].textContent === correct) {
+        if (ans[i].textContent === quiz[quizIndex].correct) {
           window.alert("正解！！")
         } else {
           window.alert("残念！！")
