@@ -30,12 +30,23 @@ window.addEventListener('load', () => {
   let quizIndex = 0;
 
     q.textContent = quiz[quizIndex].question;
-    let i = 0
-    while ( i < answers.length ) {
-      answers[i].textContent = quiz[quizIndex].answers[i];
-      i++;
-    }
-  
+     for (let i = 0; i < answers.length; i++){
+
+     answers[i].textContent = quiz[quizIndex].answers[i];
+      
+     answers[i].addEventListener('click', () => {
+       if (answers[i].textContent === quiz[quizIndex].correct) {
+         window.alert("正解！！")
+       } else {
+         window.alert("残念！！")
+       }
+     });
+   }
+
+    
+
+
+
     next.addEventListener('click', () => {
       quizIndex++;
       q.textContent = quiz[quizIndex].question;
