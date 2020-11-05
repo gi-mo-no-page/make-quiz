@@ -28,6 +28,16 @@ window.addEventListener('load', () => {
 
   const quizCount = quiz.length;
   let quizIndex = 0;
+  const quizSet = () => {
+    quizIndex++;
+    q.textContent = quiz[quizIndex].question;
+    let i = 0
+    while ( i < answers.length ) {
+    answers[i].textContent = quiz[quizIndex].answers[i];
+    i++;}
+
+  };
+
 
     q.textContent = quiz[quizIndex].question;
      for (let i = 0; i < answers.length; i++){
@@ -37,15 +47,10 @@ window.addEventListener('load', () => {
      answers[i].addEventListener('click', () => {
        if (answers[i].textContent === quiz[quizIndex].correct) {
          window.alert("正解！！")
-         quizIndex++;
-         q.textContent = quiz[quizIndex].question;
-         let i = 0
-         while ( i < answers.length ) {
-         answers[i].textContent = quiz[quizIndex].answers[i];
-         i++;}
-   
+         quizSet();
        } else {
          window.alert("残念！！")
+         quizSet();
        }
      });
    }
