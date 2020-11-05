@@ -15,19 +15,22 @@ window.addEventListener('load', () => {
       question : "誕生日は？",
       answers : ["11月26日","11月27日","11月28日","11月29日"],
       correct : "11月29日"
+    },
+    {
+      question : "名前は？",
+      answers : ["あ","い","う","え"],
+      correct : "う"
     }
   ];
-
+  const answers = document.getElementsByClassName('answer');
+  
   const quizCount = quiz.length;
   let quizIndex = 0;
-  while (quizIndex < quizCount ){
-    document.getElementById('q').textContent = quiz[quizIndex].question;
-    quizIndex++;
-  }
+  document.getElementById('q').textContent = quiz[quizIndex].question;
   
-  const answers = document.getElementsByClassName('answer');
 
   for (let i = 0; i < answers.length; i++){
+
       answers[i].textContent = quiz[quizIndex].answers[i];
       
       answers[i].addEventListener('click', () => {
