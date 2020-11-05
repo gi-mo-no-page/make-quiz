@@ -26,20 +26,23 @@ window.addEventListener('load', () => {
   const answers = document.getElementsByClassName('answer');
   const next = document.getElementById('next');
 
-  const quizCount = quiz.length;
   let quizIndex = 0;
   const quizSet = () => {
     quizIndex++;
-    q.textContent = quiz[quizIndex].question;
-    let i = 0
-    while ( i < answers.length ) {
-    answers[i].textContent = quiz[quizIndex].answers[i];
-    i++;}
+    if (quizIndex < quiz.length) {
+      q.textContent = quiz[quizIndex].question;
+      let i = 0
+      while ( i < answers.length ) {
+      answers[i].textContent = quiz[quizIndex].answers[i];
+      i++;}
+    } else {
+      window.alert(`終了です！！${quiz.length}問のうち${correctCount}問正解でした！！`);
+    }
 
   };
 
-
-    q.textContent = quiz[quizIndex].question;
+  let correctCount = 0;
+  q.textContent = quiz[quizIndex].question;
      for (let i = 0; i < answers.length; i++){
 
      answers[i].textContent = quiz[quizIndex].answers[i];
@@ -47,11 +50,11 @@ window.addEventListener('load', () => {
      answers[i].addEventListener('click', () => {
        if (answers[i].textContent === quiz[quizIndex].correct) {
          window.alert("正解！！")
-         quizSet();
+         correctCount++;
        } else {
          window.alert("残念！！")
-         quizSet();
-       }
+        }
+        quizSet();
      });
    }
 
@@ -60,14 +63,7 @@ window.addEventListener('load', () => {
 
 
     next.addEventListener('click', () => {
-      quizIndex++;
-      q.textContent = quiz[quizIndex].question;
-      let i = 0
-      while ( i < answers.length ) {
-      answers[i].textContent = quiz[quizIndex].answers[i];
-      i++;
-    }
-  
+      quizSet(); 
     })
 
 
