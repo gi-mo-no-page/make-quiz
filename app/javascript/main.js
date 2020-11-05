@@ -1,9 +1,9 @@
 window.addEventListener('load', () => {
   const quiz = [
     {
-      question : "今日の日付は？",
-      answers : ["11月4日","11月5日","11月6日","11月7日"],
-      correct : "11月5日"
+      question : "文化の日は何月何日？",
+      answers : ["11月3日","11月4日","11月5日","11月6日"],
+      correct : "11月3日"
     },
     {
       question : "１＋１は？",
@@ -16,10 +16,15 @@ window.addEventListener('load', () => {
       correct : "11月29日"
     },
     {
-      question : "名前は？",
-      answers : ["あ","い","う","え"],
-      correct : "う"
-    }
+      question : "日本で最初の総理大臣は？",
+      answers : ["板垣退助","大隈重信","伊藤博文","福沢諭吉"],
+      correct : "伊藤博文"
+    },
+    {
+      question : "「厳か」 なんて読む？",
+      answers : ["いささか","おごそか","まさか","アホか"],
+      correct : "おごそか"
+    },
   ];
 
   const q = document.getElementById('q');
@@ -27,7 +32,7 @@ window.addEventListener('load', () => {
   const next = document.getElementById('next');
 
   let quizIndex = 0;
-  const quizSet = () => {
+  const quizSet = () => {  
     quizIndex++;
     if (quizIndex < quiz.length) {
       q.textContent = quiz[quizIndex].question;
@@ -43,25 +48,21 @@ window.addEventListener('load', () => {
 
   let correctCount = 0;
   q.textContent = quiz[quizIndex].question;
-     for (let i = 0; i < answers.length; i++){
 
-     answers[i].textContent = quiz[quizIndex].answers[i];
-      
-     answers[i].addEventListener('click', () => {
-       if (answers[i].textContent === quiz[quizIndex].correct) {
-         window.alert("正解！！")
-         correctCount++;
-       } else {
-         window.alert("残念！！")
+  for (let i = 0; i < answers.length; i++){
+    answers[i].textContent = quiz[quizIndex].answers[i];
+      answers[i].addEventListener('click', () => {
+        if (answers[i].textContent === quiz[quizIndex].correct) {
+          window.alert("正解！！")
+          correctCount++;
+        } else {
+          window.alert("残念！！")
         }
         quizSet();
-     });
+      });
    }
 
-    
-
-
-
+  //次へボタン
     next.addEventListener('click', () => {
       quizSet(); 
     })
