@@ -20,31 +20,27 @@ window.addEventListener('load', () => {
 
   const quizCount = quiz.length;
   let quizIndex = 0;
-
-
-  // const question = "今日の日付は？";
-  // const answers = ["11月4日","11月5日","11月6日","11月7日"];
-  // const correct = "11月4日";
+  while (quizIndex < quizCount ){
+    document.getElementById('q').textContent = quiz[quizIndex].question;
+    quizIndex++;
+  }
   
-  document.getElementById('q').textContent = quiz[quizIndex].question;
-  const ans = document.getElementsByClassName('ans');
-  // let i = 0;
-  // while (i < ans.length){
-    //   ans[i].textContent = answers[i];
-    //   i++;
-    // };
-    
-    for (let i = 0; i < ans.length; i++){
-      ans[i].textContent = quiz[quizIndex].answers[i];
+  const answers = document.getElementsByClassName('answer');
+
+  for (let i = 0; i < answers.length; i++){
+      answers[i].textContent = quiz[quizIndex].answers[i];
       
-      ans[i].addEventListener('click', () => {
-        if (ans[i].textContent === quiz[quizIndex].correct) {
+      answers[i].addEventListener('click', () => {
+        if (answers[i].textContent === quiz[quizIndex].correct) {
           window.alert("正解！！")
         } else {
           window.alert("残念！！")
         }
       });
     }
+
+
+
   })
     
     
