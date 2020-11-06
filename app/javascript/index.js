@@ -1,3 +1,4 @@
+if (document.URL.match( /quizzes/ ) ) {
 window.addEventListener('load', () => {
   const quiz = [
     {
@@ -72,7 +73,7 @@ window.addEventListener('load', () => {
 
 
   })
-    
+}  
     
     
     
