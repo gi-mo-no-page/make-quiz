@@ -7,11 +7,11 @@
     <ul class="start-list">
       <li><%= link_to  "Let's Start Qiuz", quizzes_path, class:"list txt1" %></li>
       <% if user_signed_in? %>
-      <li><%= link_to  "クイズ作成", root_path, class:"list txt2" %></li>
-      <li><%= link_to  "ログアウト", destroy_user_session_path,method: :delete, class:"list txt3" %></li>
+      <li><%= link_to  "Make your Quiz", root_path, class:"list txt2" %></li>
+      <li><%= link_to  "Sign Out", destroy_user_session_path,method: :delete, class:"list txt3" %></li>
       <% else %>
-      <li><%= link_to  "ログイン", new_user_session_path, class:"list" %></li>
-      <li><%= link_to  "新規登録", new_user_registration_path, class:"list" %></li>
+      <li><%= link_to  "Log In", new_user_session_path, class:"list" %></li>
+      <li><%= link_to  "Sign Up", new_user_registration_path, class:"list" %></li>
       <% end %>
     </ul>
     <% if user_signed_in? %>
