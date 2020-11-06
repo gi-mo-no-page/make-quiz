@@ -7,8 +7,9 @@
     <ul class="start-list">
       <li><%= link_to  "Let's Start Qiuz", quizzes_path, class:"list" %></li>
       <% if user_signed_in? %>
+      <li><%= link_to  "クイズ作成", root_path, class:"list" %></li>
       <li><%= link_to  "ログアウト", destroy_user_session_path,method: :delete, class:"list" %></li>
-      <li class="list"><%= @user.name %>さん</li>
+      <li><%= link_to  "#{@user.name}さん", root_path, class:"list" %></li>
       <% else %>
       <li><%= link_to  "ログイン", new_user_session_path, class:"list" %></li>
       <li><%= link_to  "新規登録", new_user_registration_path, class:"list" %></li>
