@@ -48,6 +48,7 @@ body {
 }
 
 // topページ
+
 .top-main {
   background-image: image-url("quiz.jpg");
   background-size: cover;
@@ -64,6 +65,7 @@ body {
   height: 300px;
   // background-color: aqua;
   margin: 0 auto;
+  position: absolute;
 }
 
 .top-title-area {
@@ -72,8 +74,20 @@ body {
   background: red;
   margin: 0 auto;
   padding: 12px;
+  animation-name: In;
+  animation-duration: 1.5s; /* アニメーションの長さ */
+  animation-fill-mode: forwards; 
+  position: relative;
+  top:-500px;
 
 }
+
+.top-title-area:hover {
+  transform: translate(0px, -500px);
+  
+}
+
+
 
 .top-title {
   padding: 0;
@@ -88,10 +102,10 @@ body {
   padding: 0;
   margin: 0;
   margin-top: 32px;
-
   display: flex;
   justify-content: space-around;
   align-items: center;
+
 }
 
 .list {
@@ -101,11 +115,51 @@ body {
   background-color: aqua;
   font-size: 20px;
   transition: background-color 1s;
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 2s; /* アニメーションの長さ */
+  animation-fill-mode: forwards; 
+
+
 }
 
 .list:hover {
   color: #fff;
   text-decoration: none;
   opacity: 0.8;
-  background-color: brown;
+
 }
+
+.txt1:hover {
+  background-color: rgb(165, 42, 132);
+}
+.txt2:hover {
+  background-color: rgb(42, 165, 89);
+}
+.txt3:hover {
+  background-color: rgb(234, 254, 81);
+}
+.txt4:hover {
+  background-color: rgba(85, 92, 232, 0.731);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translate(1200px, 0px);
+
+  }
+}
+@keyframes In {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    transform: translate(0px, 450px);
+
+  }
+}
+
