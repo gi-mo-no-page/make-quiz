@@ -136,7 +136,7 @@ body {
   transition: background-color 1s;
   opacity: 0;
   animation-name: fadeIn;
-  animation-duration: 2s; /* アニメーションの長さ */
+  animation-duration: 2s; 
   animation-fill-mode: forwards; 
 
 
@@ -200,7 +200,7 @@ body {
   right: 1300px;
 
   animation-name: NameIn;
-  animation-duration: 1.5s; /* アニメーションの長さ */
+  animation-duration: 1.5s; 
   animation-fill-mode: forwards; 
 
 }
