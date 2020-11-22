@@ -17,4 +17,3 @@
 
 * Deployment instructions
 
-* ...
