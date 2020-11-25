@@ -1,5 +1,6 @@
 ## Make Quiz
 JavaScript学習用
+ユーザーが問題を設定できる
 
 * Ruby version 2.6.0
 
